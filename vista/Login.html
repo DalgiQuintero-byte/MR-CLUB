@@ -1,17 +1,34 @@
-<html lag="es">
-<head>
-    <meta charset="UTF-8">
-    <title>CLUB ADSO</title>
-    <link rel="styledheet" href="../Assets/CSS/">
-</head>
-<body>
-    <div>
-        <h2>Iniciar sesión</h2>
-        <form id="Iniciar sesión" action="" method="POST">
-            <div class="">
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <title>CLUB ADSO</title>
+         <link rel="stylesheet" href="../Assets/EstiloLogin.css">
+    </head>
 
-            </div>
-        </form>
-    </div>
-</body>
+    <body>
+        <div class="Container-Login">
+            <h2>Iniciar Sesión Accerías</h2>
+
+            <form id="FormuLogin" action="" method="POST">
+                <div class="grupo-input">
+                    <label for="Email">Correo Electrónico: </label>
+                    <input type="email" id="Email" required placeholder="Ingresa Tu Correo Electrónico">
+                </div>
+
+                <div class="grupo-input">
+                    <label for="Password">Contraseña: </label>
+                    <input type="password" id="Password" required placeholder="Ingresa Tu Contraseña">
+                </div>
+                <div class="grupo-botones">
+                    <button type="submit">Ingresar</button>
+                    <button type="reset" class="btn-secundario">cancelar</button>
+                </div>
+
+                <p class="texto-link">
+                    ¿No tienes una cuenta? <a href="Registro.html">Regístrate aquí</a>
+                </p>
+            </form>
+        </div>
+    </body>
 </html>
