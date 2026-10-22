@@ -1,0 +1,60 @@
+*{
+    margin:0;
+    padding:0;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body{
+    background-color:rgb(176, 223, 238) ;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+h2{
+    color:rgb(1, 89, 124);
+    margin-bottom: 20px;
+    font-size:50px;
+    text-align: center;
+    border-bottom: 2px solid #eee;
+    padding: bottom 15px;
+
+}
+.grupo-input{
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+.grupo-botones{
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+button{
+    flex: 1;
+    padding: 12px;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    cursor:pointer;
+    transition: background-color 0.2s;
+}
+
+input, select {
+    padding: 10px;
+    border: 1px solid #d4138a;
+    border-radius: 5px;
+    font-size:15px;
+} 
+.ContenedorFormulario{
+    background-color:aqua; /*color de fondo*/
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(247, 56, 56, 0.1); /*sombra para darle profundidad al contenedor*/
+    width:100%;
+    max-width: 500px; /*ancho máximo del contenedor*/
+}
+button[type="submit"]{
+    background-color:rgb(33, 102, 221);
+    color:rgb(8, 9, 10);
+}
