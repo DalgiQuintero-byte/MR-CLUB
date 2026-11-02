@@ -4,7 +4,7 @@
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 body{
-    background-color:rgb(161, 200, 225); /*Color de fondo*/
+    background-color:rgb(196, 163, 227); /*Color de fondo*/
     display:flex;
     justify-content: center;
     align-items: center;
@@ -12,16 +12,16 @@ body{
     padding: 20px;
 }
 h2{
-    color:rgb(57, 117, 207);
+    color:rgb(255, 251, 251);
     margin-bottom: 20px;
     font-size:50px;
     text-align: center;
-    border-bottom: 2px solid #530af2;
+    border-bottom: 2px solid #7b00f7;
     padding: bottom 15px;
 
 }
 .Container-Login{
-    background-color:rgb(93, 193, 239); /*Color de fondo de la tarjeta*/
+    background-color:rgb(171, 99, 238); /*Color de fondo de la tarjeta*/
     padding: 30px;
     border-radius: 8%;
     box-shadow: 0 0 10px rgba(19, 212, 29, 0.1); /*Sombra para darle profundidad al contenedo*/
@@ -39,11 +39,11 @@ h2{
     flex-direction: column;
 }
 button[type="submit"]{
-    background-color:rgb(6, 182, 73);
+    background-color:rgb(49, 160, 119);
     color:white; /*Color de texto*/
 }
 button[type="reset"]{
-    background-color:rgb(231, 13, 5);
+    background-color:rgb(169, 75, 71);
     color:white; /*Color de texto*/
 }
 button{
@@ -57,11 +57,11 @@ button{
 }
 input, select { /*Estilo de los campos doonde se ingresa la información*/
     padding: 10px;
-    border: 1px solid #38e432;
+    border: 1px solid #7301ff;
     border-radius: 5px;
     font-size:15px;
 } 
 input:focus, select:focus{
-    border-color:#38e431;
+    border-color:#19d862;
     box-shadow: 0 0 0 3px rgba(209, 19, 138, 0.2);
 }

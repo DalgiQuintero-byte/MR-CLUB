@@ -1,0 +1,110 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Actividades - Club Acerías</title>
+
+    <link rel="stylesheet" href="../Assets/EstiloFormulario.css">
+</head>
+
+<body>
+
+    <div class="Contenedor-Formulario">
+
+        <h2>Registro de Actividades</h2>
+
+        <form id="FormularioActividades">
+
+            <div class="grupo-input">
+                <label for="IdActividad">Código de actividad:</label>
+                <input type="text" id="IdActividad" required
+                    placeholder="Ejemplo: ACT001">
+            </div>
+
+            <div class="grupo-input">
+                <label for="NombreActividad">Nombre de la actividad:</label>
+                <input type="text" id="NombreActividad" required
+                    placeholder="Ingrese el nombre">
+            </div>
+
+            <div class="grupo-input">
+                <label for="Descripcion">Descripción:</label>
+                <textarea id="Descripcion" rows="3" required
+                    placeholder="Describa la actividad"></textarea>
+            </div>
+
+            <div class="grupo-input">
+                <label for="FechaActividad">Fecha de realización:</label>
+                <input type="date" id="FechaActividad" required>
+            </div>
+
+            <div class="grupo-input">
+                <label for="Lugar">Lugar:</label>
+                <input type="text" id="Lugar" required
+                    placeholder="Lugar de realización">
+            </div>
+
+            <div class="grupo-input">
+                <label for="ValorRecaudado">Valor recaudado:</label>
+                <input type="number" id="ValorRecaudado"
+                    min="0" step="100" required
+                    placeholder="Ingrese el valor">
+            </div>
+
+            <div class="grupo-input">
+                <label for="Estado">Estado de la actividad:</label>
+                <select id="Estado" required>
+                    <option value="">Seleccione un estado</option>
+                    <option value="Programada">Programada</option>
+                    <option value="Realizada">Realizada</option>
+                    <option value="Cancelada">Cancelada</option>
+                </select>
+            </div>
+
+            <div class="grupo-botones">
+                <button type="submit">Guardar actividad</button>
+                <button type="reset">Limpiar</button>
+            </div>
+
+        </form>
+
+        <p id="mensajeActividad"></p>
+
+        <hr>
+
+        <h2>Actividades registradas</h2>
+
+        <div class="tabla-contenedor">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Código</th>
+                        <th>Actividad</th>
+                        <th>Fecha</th>
+                        <th>Lugar</th>
+                        <th>Recaudado</th>
+                        <th>Estado</th>
+                        <th>Acción</th>
+                    </tr>
+                </thead>
+
+                <tbody id="tablaActividades"></tbody>
+            </table>
+        </div>
+
+        <div class="grupo-botones">
+            <button type="button"
+                onclick="window.location.href='dashboard.html'">
+                Volver al panel
+            </button>
+        </div>
+
+    </div>
+
+    <script src="../Controlador/Actividades.js"></script>
+
+</body>
+</html>

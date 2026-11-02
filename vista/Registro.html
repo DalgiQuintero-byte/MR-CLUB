@@ -1,71 +1,137 @@
+
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <meta charset="UTF-8">
-        <title>CLUB ADSO</title>
-        <link rel="stylesheet" href="../Assets/EstiloFormulario.css">
-    </head>
-    <body>
-     <div class="Contenedor-Formulario">
-        <h2>Registro de Asociado - Acerias</h2>
 
-        <form id="Formulario Registro" action="" method="POST">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Registro de Asociados - Club Acerías</title>
+
+    <link rel="stylesheet" href="../Assets/EstiloFormulario.css">
+</head>
+
+<body>
+
+    <div class="Contenedor-Formulario">
+
+        <h2>Registro de Asociados</h2>
+
+        <form id="FormularioRegistro">
+
             <div class="grupo-input">
-                <label>Ingresar Documento: </label>
-                <input id="Documento" type="number" placeholder="ejemplo:1054869578">
+                <label for="Documento">Documento:</label>
+                <input type="text" id="Documento" required
+                    placeholder="Ingrese el documento">
             </div>
+
             <div class="grupo-input">
-                <label>Ingresar Nombres: </label>
-                <input type="text" id="Nombres" required placeholder="Ingrese nombre completos">
+                <label for="Nombres">Nombres:</label>
+                <input type="text" id="Nombres" required
+                    placeholder="Ingrese nombres completos">
             </div>
+
             <div class="grupo-input">
-                 <label>Ingresar Apellidos: </label>
-                <input type="text" id="Apellidos" required placeholder="Ingrese apellidos completos">
+                <label for="Apellidos">Apellidos:</label>
+                <input type="text" id="Apellidos" required
+                    placeholder="Ingrese apellidos completos">
             </div>
+
             <div class="grupo-input">
-                <label>Ingrese su fecha de nacimiento:</label>
-                <input type="date" id="FechaNacimiento" required placeholder="ejemplo: 19/09/2008">
+                <label for="FechaNacimiento">Fecha de nacimiento:</label>
+                <input type="date" id="FechaNacimiento" required>
             </div>
+
             <div class="grupo-input">
-                <label>Dirección De Residencia: </label>
-                <input type="text" id="DirecciónDeResidencia" required placeholder="ejemplo: Calle 12 # 6-49">
+                <label for="Direccion">Dirección de residencia:</label>
+                <input type="text" id="Direccion" required
+                    placeholder="Ingrese su dirección">
             </div>
+
             <div class="grupo-input">
-                <label>Ciudad: </label>
-                <Select id="Ciudad" required>
+                <label for="Ciudad">Ciudad:</label>
+                <select id="Ciudad" required>
+                    <option value="">Seleccione una ciudad</option>
                     <option value="Sogamoso">Sogamoso</option>
                     <option value="Duitama">Duitama</option>
                     <option value="Tunja">Tunja</option>
-                </Select>
+                </select>
             </div>
+
             <div class="grupo-input">
-                <label>Telefono: </label>
-                <input type="number" id="Telefono" required placeholder="ejemplo: 3125847896">
+                <label for="Telefono">Teléfono:</label>
+                <input type="tel" id="Telefono" required
+                    placeholder="Ejemplo: 3125847896">
             </div>
+
             <div class="grupo-input">
-                <label>Email: </label>
-                <input type="text" id="Email" required placeholder="ejemplo: valeria@gmail.com">
+                <label for="Email">Correo electrónico:</label>
+                <input type="email" id="Email" required
+                    placeholder="correo@gmail.com">
             </div>
+
             <div class="grupo-input">
-                <label>Genero: </label>
+                <label>Género:</label>
+
                 <label>
-                      <input type="radio" id="Femenino" name="genero" values="Femenino">
-                      <span>FEMENINO</span>
+                    <input type="radio" name="Genero"
+                        value="Femenino" required>
+                    Femenino
                 </label>
+
                 <label>
-                      <input type="radio" id="Masculino" name="genero" values="Masculino">
-                      <span>MASCULINO</span>
+                    <input type="radio" name="Genero"
+                        value="Masculino">
+                    Masculino
                 </label>
+
                 <label>
-                      <input type="radio" id="Otro" name="genero" values="Otro">
-                      <span>OTRO</span>
+                    <input type="radio" name="Genero"
+                        value="Otro">
+                    Otro
                 </label>
             </div>
+
             <div class="grupo-botones">
-                <button type="submit">Guardar</button>
-                <button type="reset">Limpiar Formulario</button>
+                <button type="submit">Guardar asociado</button>
+                <button type="reset">Limpiar</button>
             </div>
+
         </form>
-     </div>
-    </body>
+
+        <p id="mensaje"></p>
+
+        <hr>
+
+        <h2>Asociados registrados</h2>
+
+        <div class="tabla-contenedor">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Documento</th>
+                        <th>Nombres</th>
+                        <th>Apellidos</th>
+                        <th>Teléfono</th>
+                        <th>Ciudad</th>
+                        <th>Acción</th>
+                    </tr>
+                </thead>
+
+                <tbody id="tablaAsociados"></tbody>
+            </table>
+        </div>
+
+        <div class="grupo-botones">
+            <button type="button"
+                onclick="window.location.href='dashboard.html'">
+                Volver al panel
+            </button>
+        </div>
+
+    </div>
+
+    <script src="../Controlador/Registro.js"></script>
+
+</body>
 </html>

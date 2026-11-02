@@ -4,7 +4,7 @@
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 body{
-    background-color:rgb(176, 223, 238) ;
+    background-color:rgb(214, 176, 238) ;
     display:flex;
     justify-content: center;
     align-items: center;
@@ -12,7 +12,7 @@ body{
     padding: 20px;
 }
 h2{
-    color:rgb(1, 89, 124);
+    color:rgb(87, 1, 124);
     margin-bottom: 20px;
     font-size:50px;
     text-align: center;
@@ -42,12 +42,12 @@ button{
 
 input, select {
     padding: 10px;
-    border: 1px solid #d4138a;
+    border: 1px solid #8c00ff;
     border-radius: 5px;
     font-size:15px;
 } 
 .ContenedorFormulario{
-    background-color:aqua; /*color de fondo*/
+    background-color:rgb(123, 0, 255); /*color de fondo*/
     padding: 30px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(247, 56, 56, 0.1); /*sombra para darle profundidad al contenedor*/
@@ -55,6 +55,54 @@ input, select {
     max-width: 500px; /*ancho máximo del contenedor*/
 }
 button[type="submit"]{
-    background-color:rgb(33, 102, 221);
+    background-color:rgb(138, 45, 238);
     color:rgb(8, 9, 10);
+}
+
+/* Tabla de asociados */
+
+hr {
+    margin: 30px 0;
+    border: 1px solid #7504ff;
+}
+
+.tabla-contenedor {
+    width: 100%;
+    overflow-x: auto;
+    margin-top: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+}
+
+th {
+    background-color: rgb(124, 33, 221);
+    color: white;
+    padding: 12px;
+}
+
+td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+}
+
+td button {
+    background-color: #f80000;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 5px;
+}
+
+td button:hover {
+    background-color: #b0332a;
+}
+
+#mensaje {
+    margin-top: 15px;
+    font-weight: bold;
+    text-align: center;
 }

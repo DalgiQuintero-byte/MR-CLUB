@@ -1,0 +1,110 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Registro de Pagos - Club Acerías</title>
+
+    <link rel="stylesheet" href="../Assets/EstiloFormulario.css">
+</head>
+
+<body>
+
+    <div class="Contenedor-Formulario">
+
+        <h2>Registro de Pagos</h2>
+
+        <form id="FormularioPago">
+
+            <div class="grupo-input">
+                <label for="Prestamo">Seleccionar préstamo:</label>
+                <select id="Prestamo" required>
+                    <option value="">Seleccione un préstamo</option>
+                </select>
+            </div>
+
+            <div class="grupo-input">
+                <label for="AsociadoPago">Asociado:</label>
+                <input type="text" id="AsociadoPago" readonly
+                    placeholder="Se mostrará automáticamente">
+            </div>
+
+            <div class="grupo-input">
+                <label for="SaldoPendiente">Saldo pendiente:</label>
+                <input type="text" id="SaldoPendiente" readonly
+                    placeholder="$0">
+            </div>
+
+            <div class="grupo-input">
+                <label for="FechaPago">Fecha del pago:</label>
+                <input type="date" id="FechaPago" required>
+            </div>
+
+            <div class="grupo-input">
+                <label for="ValorPago">Valor pagado:</label>
+                <input type="number" id="ValorPago" min="1"
+                    step="1" required placeholder="Ingrese el valor del pago">
+            </div>
+
+            <div class="grupo-input">
+                <label for="MetodoPago">Método de pago:</label>
+                <select id="MetodoPago" required>
+                    <option value="">Seleccione un método</option>
+                    <option value="Efectivo">Efectivo</option>
+                    <option value="Transferencia">Transferencia</option>
+                    <option value="Consignación">Consignación</option>
+                </select>
+            </div>
+
+            <div class="grupo-input">
+                <label for="ObservacionPago">Observaciones:</label>
+                <textarea id="ObservacionPago" rows="3"
+                    placeholder="Información adicional"></textarea>
+            </div>
+
+            <div class="grupo-botones">
+                <button type="submit">Registrar pago</button>
+                <button type="reset">Limpiar</button>
+            </div>
+
+        </form>
+
+        <p id="mensajePago"></p>
+
+        <hr>
+
+        <h2>Historial de Pagos</h2>
+
+        <div class="tabla-contenedor">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Comprobante</th>
+                        <th>Asociado</th>
+                        <th>Préstamo</th>
+                        <th>Fecha</th>
+                        <th>Valor pagado</th>
+                        <th>Método</th>
+                    </tr>
+                </thead>
+
+                <tbody id="tablaPagos"></tbody>
+            </table>
+        </div>
+
+        <div class="grupo-botones">
+            <button type="button"
+                onclick="window.location.href='dashboard.html'">
+                Volver al panel
+            </button>
+        </div>
+
+    </div>
+
+    <script src="../Controlador/Pagos.js"></script>
+
+</body>
+</html>
