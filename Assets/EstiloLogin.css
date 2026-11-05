@@ -48,6 +48,7 @@ button[type="reset"]{
 }
 button{
     flex: 1;
+    
     padding: 12px;
     border: none;
     font-size: 16px;
@@ -62,6 +63,6 @@ input, select { /*Estilo de los campos doonde se ingresa la información*/
     font-size:15px;
 } 
 input:focus, select:focus{
-    border-color:#19d862;
-    box-shadow: 0 0 0 3px rgba(209, 19, 138, 0.2);
+    border-color:#00ff55;
+    box-shadow: 0 0 0 3px #fc3ab55f;
 }
