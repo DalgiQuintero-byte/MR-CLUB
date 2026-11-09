@@ -1,6 +1,6 @@
 <?php
 header("Content-Type: application/json; charset-utf-8");
-require __DIR__ . '../Modelo/Asociados.php';
+require __DIR__ . '/Asociado.php';
 
 try {
     if ($_SERVER["REQUEST_METHOD"] !== "POST") {
@@ -22,7 +22,7 @@ try {
     }
 
     /*Crear una intancia de la clase Asociados y guardar los datos en la base de datos*/
-    $campos=['documento','Nombres','Apellidos','FechaNacimiento','DirecciónDeResidencia','Ciudad','Telefono','Email','genero']
+    $campos=['documento','nombres','apellidos','fechaNacimiento','direccionResidencia','ciudad','telefono','email','genero', 'contraseña'];
     
     foreach($campos as $campo) {
         if (!isset($datos[$campo])) {
@@ -50,8 +50,8 @@ try {
     }
   }catch (PDOException $e){
    if ($e->getcode() == 23000){ //codigo de eerr para datos duplicados es mysql
-    http_response_code(409)//conflicto
-    echo json_encode(["siccess" =>false, "mensaje" => "El documento ya esta registrado"]);
+    http_response_code(409);//conflicto
+    echo json_encode(["success" =>false, "mensaje" => "El documento ya esta registrado"]);
    }else{
     http_response_code(500);
     echo json_encode(["success" => false, "mensaje" => "Error en la base de datos:" . $e->getMessage()]);

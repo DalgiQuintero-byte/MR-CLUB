@@ -23,3 +23,4 @@ document.getElementById('FormuLogin').addEventListener('submit', function (e) {
         alert('Usuario o contraseña incorrectos');
     }
 });
+

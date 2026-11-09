@@ -9,10 +9,18 @@ formulario.addEventListener("submit", function (event){
     //lee los campos del formulario y los cinvierte en un objeto
 const asociado = object.fromEntries(new formData(formulario).entries());
 
+if(asociado.contraseña !== asociado.confirmarContraseña){
+            document.getElementById("MensajeRegistro").textContent = "Las contraseñas no coinciden";
+            document.getElementById("MensajeRegistro").dataset.tipo="error";
+            return;
+        }
+
+delete asociado.confirmarcontraseña;
+
 botonGuardar.disabled = true; //Deshabilirtar el botón mientras se procesa la solicitud
 
 try{
-    const respusta = await fetch(formulario.action,{
+    const respusta = await fetch(formulario.action, {
         method:'POST' ,
         headers:{'content-Type':'application/json'},
         body:JSON.stringify(asociado),
