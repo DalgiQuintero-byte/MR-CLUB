@@ -3,7 +3,7 @@ formulario.addEventListener('submit', async function (e) {
     e.preventDefault();
 
     const botton = document.querySelector('button[type="submit"]');
-    const mensaje = formulario.getElementById("mensajeLogin");
+    const mensaje = formulario.querySelector("mensajeLogin");
 
 botton.disabled = true;
 
@@ -19,7 +19,7 @@ const resultado = await respuesta.json();
 
 if(!resultado.success){
 mensaje.textContent = "No fue posible iniciar sesion. po favor, verificar tis credenciales";
-boton.disabled = false;
+botton.disabled = false;
 return;
 }
 
