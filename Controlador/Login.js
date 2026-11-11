@@ -1,26 +1,38 @@
-const Usuarios = [
-    { usuario: 'admin@gmail.com', clave: '123', rol: 'admin', nombre: 'admin  MR' },
-    { usuario: 'pepito@gmail.com', clave: '123', rol: 'asociado', nombre: 'juan pérez' }
-];
-
-document.getElementById('FormuLogin').addEventListener('submit', function (e) {
+const formulario = document.getElementById('formuLogin');
+formulario.addEventListener('submit', async function (e) {
     e.preventDefault();
 
-    const usuarioInput = document.getElementById('email').value;
-    const claveInput = document.getElementById('Password').value;
+    const botton = document.querySelector('button[type="submit"]');
+    const mensaje = formulario.getElementById("mensajeLogin");
 
-    const usuarioEncontrado = Usuarios.find(
-        u => u.usuario === usuarioInput && u.clave === claveInput
-    );
+botton.disabled = true;
 
-    if (usuarioEncontrado) {
-        localStorage.setItem('logueado', 'true');
-        localStorage.setItem('rol', usuarioEncontrado.rol);
-        localStorage.setItem('nombre', usuarioEncontrado.nombre);
-        window.location.href = 'dashboard.html';
-    }
-    else {
-        alert('Usuario o contraseña incorrectos');
-    }
+try{
+const respuesta = await fetch (formulario.action,{
+    method: "POST",
+    headers:{"content-Type": "application/json"},
+    body: JSON.stringify(Object.fromEntries(new FormData(formulario).entries()),
+),
 });
 
+const resultado = await respuesta.json();
+
+if(!resultado.success){
+mensaje.textContent = "No fue posible iniciar sesion. po favor, verificar tis credenciales";
+boton.disabled = false;
+return;
+}
+
+localStorage.setItem("logueado", "true");
+localStorage.setItem("rol", resultado.rol);
+localStorage.setItem("nombre", resultado.nombre);
+
+window.location.href = "dashboard.html";
+}catch (error) {
+console.error("Error al iniciar sesión", error);
+mensaje.textContent = "Ocurrio un error al intentar iniciar sesión. por favor, inténtalo de nuevo más tarde.";
+}finally{
+    botton.disabled = false;
+}
+   
+});

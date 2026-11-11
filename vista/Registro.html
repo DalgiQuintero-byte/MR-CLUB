@@ -2,21 +2,22 @@
 <html lang="es">
     <head>
         <meta charset="UTF-8">
-        <title>CLUB ADSO</title>
-        <link rel="stylesheet" href="..//Assets/EstiloFormulario.css">
+        <title>MR-CLUB</title>
+        <link rel="stylesheet" href="../Assets/EstiloFormulario.css">
     </head>
     <body>
      <div class="Contenedor-Formulario">
         <h2>Registro de Asociado - Acerias</h2>
 
-        <form id="Contenedor-Formulario" action="../Modelo/GuardarAsociado.php" method="POST">
+        <!-- Cambiamos el action si vas a usar fetch con JS, o puedes ajustarlo -->
+        <form id="FormularioRegistro" action="../Modelo/GuardarAsociado.php" method="POST">
             <div class="grupo-input">
                 <label>Ingresar Documento: </label>
-                <input id="Documento" type="number" name="documento" required placeholder="ejemplo:1054869578">
+                <input id="Documento" name="documento" type="number" placeholder="ejemplo:1054869578" required>
             </div>
             <div class="grupo-input">
                 <label>Ingresar Nombres: </label>
-                <input type="text" id="Nombres" name="nombres" required placeholder="Ingrese nombre completos">
+                <input type="text" id="Nombres" name="nombres" required placeholder="Ingrese nombres completos">
             </div>
             <div class="grupo-input">
                  <label>Ingresar Apellidos: </label>
@@ -24,7 +25,7 @@
             </div>
             <div class="grupo-input">
                 <label>Ingrese su fecha de nacimiento:</label>
-                <input type="date" id="FechaNacimiento" name="fechaNacimiento" required placeholder="ejemplo: 19/09/2008">
+                <input type="date" id="FechaNacimiento" name="fechaNacimiento" required>
             </div>
             <div class="grupo-input">
                 <label>Dirección De Residencia: </label>
@@ -32,11 +33,11 @@
             </div>
             <div class="grupo-input">
                 <label>Ciudad: </label>
-                <Select id="Ciudad" name="ciudad" required>
+                <select id="Ciudad" name="ciudad" required>
                     <option value="Sogamoso">Sogamoso</option>
                     <option value="Duitama">Duitama</option>
                     <option value="Tunja">Tunja</option>
-                </Select>
+                </select>
             </div>
             <div class="grupo-input">
                 <label>Telefono: </label>
@@ -44,21 +45,21 @@
             </div>
             <div class="grupo-input">
                 <label>Email: </label>
-                <input type="text" id="Email" name="email" required placeholder="ejemplo: valeria@gmail.com">
+                <input type="email" id="Email" name="email" required placeholder="ejemplo: valeria@gmail.com">
             </div>
             <div class="grupo-input">
                 <label>Contraseña: </label>
-                <input type="password" id="Contraseña" name="contraseña" required placeholder="minimo 8 caracteres, mayusculas, comas y almenosun caracter especial">
+                <!-- CORREGIDO: name="contraseña" en minúscula -->
+                <input type="password" id="Contraseña" name="contraseña" required placeholder="minimo 8 caracteres">
             </div>
             <div class="grupo-input">
-                <label>Confirmar Contraseña: </label>
-                <input type="password" id="ConfirmarContraseña" name="confirmarcontraseña" required placeholder="Escribe nuevamente tu contraseña para confirmar">
+                <label>ConfirmarContraseña: </label>
+                <input type="password" id="ConfirmarContraseña" name="confirmarContrasena" required placeholder="Confirma tu contraseña">
             </div>
-            </form>
             <div class="grupo-input">
                 <label>Genero: </label>
                 <label>
-                      <input type="radio" id="Femenino" name="genero" value="Femenino">
+                      <input type="radio" id="Femenino" name="genero" value="Femenino" required>
                       <span>FEMENINO</span>
                 </label>
                 <label>
@@ -66,7 +67,8 @@
                       <span>MASCULINO</span>
                 </label>
                 <label>
-                      <input type="radio" id="Otro" name="genero" values="Otro">
+                      <!-- CORREGIDO: values por value -->
+                      <input type="radio" id="Otro" name="genero" value="Otro">
                       <span>OTRO</span>
                 </label>
             </div>
@@ -75,7 +77,7 @@
                 <button type="reset">Limpiar Formulario</button>
             </div>
 
-            <P id="MensajeRegistro" role="status" aria-live="polite"></P>
+            <p id="MensajeRegistro" role="status" aria-live="polite"></p>
         </form>
      </div>
     </body>
