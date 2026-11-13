@@ -2,8 +2,8 @@ const formulario = document.getElementById('formuLogin');
 formulario.addEventListener('submit', async function (e) {
     e.preventDefault();
 
-    const botton = document.querySelector('button[type="submit"]');
-    const mensaje = formulario.querySelector("mensajeLogin");
+    const botton = formulario.querySelector('button[type="submit"]');
+    const mensaje = document.querySelector("mensajeLogin");
 
 botton.disabled = true;
 

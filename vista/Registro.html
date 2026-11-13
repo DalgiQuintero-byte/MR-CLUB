@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="es">
+
     <head>
         <meta charset="UTF-8">
         <title>MR-CLUB</title>
         <link rel="stylesheet" href="../Assets/EstiloFormulario.css">
     </head>
+
     <body>
      <div class="Contenedor-Formulario">
         <h2>Registro de Asociado - Acerias</h2>
@@ -12,7 +14,7 @@
         <form id="FormularioRegistro" action="../Modelo/GuardarAsociado.php" method="POST">
             <div class="grupo-input">
                 <label>Ingresar Documento: </label>
-                <input id="Documento" name="documento" type="number" placeholder="ejemplo:1054869578" required>
+                <input id="Documento" name="documento" type="number" placeholder="ejemplo:1054869578" >
             </div>
             <div class="grupo-input">
                 <label>Ingresar Nombres: </label>
@@ -24,7 +26,7 @@
             </div>
             <div class="grupo-input">
                 <label>Ingrese su fecha de nacimiento:</label>
-                <input type="date" id="FechaNacimiento" name="fechaNacimiento" required>
+                <input type="date" id="FechaNacimiento" name="fechaNacimiento" required placeholder ="ejemplo: 30/11/1999">
             </div>
             <div class="grupo-input">
                 <label>Dirección De Residencia: </label>
@@ -44,7 +46,7 @@
             </div>
             <div class="grupo-input">
                 <label>Email: </label>
-                <input type="email" id="Email" name="email" required placeholder="ejemplo: valeria@gmail.com">
+                <input type="email" id="Email" name="email" required placeholder="ejemplo: valentina@gmail.com">
             </div>
             <div class="grupo-input">
                 <label>Contraseña: </label>
@@ -65,7 +67,7 @@
                       <span>MASCULINO</span>
                 </label>
                 <label>
-                      <!-- CORREGIDO: values por value -->
+                      
                       <input type="radio" id="Otro" name="genero" value="Otro">
                       <span>OTRO</span>
                 </label>
@@ -79,4 +81,5 @@
         </form>
      </div>
     </body>
+    <script src="../controlador/Asociado.js"></script>
 </html>
