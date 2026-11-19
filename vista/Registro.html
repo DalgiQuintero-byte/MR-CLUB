@@ -14,7 +14,7 @@
         <form id="FormularioRegistro" action="../Modelo/GuardarAsociado.php" method="POST">
             <div class="grupo-input">
                 <label>Ingresar Documento: </label>
-                <input id="Documento" name="documento" type="number" placeholder="ejemplo:1054869578" >
+                <input id="Documento" name="documento" type="number" required="ejemplo:1054869578" >
             </div>
             <div class="grupo-input">
                 <label>Ingresar Nombres: </label>
@@ -30,7 +30,7 @@
             </div>
             <div class="grupo-input">
                 <label>Dirección De Residencia: </label>
-                <input type="text" id="DirecciónDeResidencia" name="direccionResidencia" required placeholder="ejemplo: Calle 12 # 6-49">
+                <input type="text" id="DireccionResidencia" name="direccionResidencia" required placeholder="ejemplo: Calle 12 # 6-49">
             </div>
             <div class="grupo-input">
 
@@ -51,11 +51,11 @@
             </div>
             <div class="grupo-input">
                 <label>Contraseña: </label>
-                <input type="password" id="Contraseña" name="contraseña" required placeholder="minimo 8 caracteres">
+                <input type="password" id="Contrasena" name="contrasena" required  ninlength= "8"placeholder="minimo 8 caracteres">
             </div>
             <div class="grupo-input">
                 <label>ConfirmarContraseña: </label>
-                <input type="password" id="ConfirmarContraseña" name="confirmarContrasena" required placeholder="Confirma tu contraseña">
+                <input type="password" id="ConfirmarContrasena" name="confirmarContrasena" required placeholder="Confirma tu contraseña">
             </div>
             <div class="grupo-input">
                 <label>Genero: </label>
@@ -81,6 +81,6 @@
             <p id="MensajeRegistro" role="status" aria-live="polite"></p>
         </form>
      </div>
+    <script src="../Controlador/Asociado.js"></script>
     </body>
-    <script src="../controlador/Asociado.js"></script>
 </html>

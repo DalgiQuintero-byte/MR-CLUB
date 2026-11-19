@@ -1,4 +1,4 @@
-const formAsociado = document.getElementById("Contenedor-Formulario");
+const formAsociado = document.getElementById("FormularioAsociado");
 
     formAsociado.addEventListener("submit", async function (event) {
         //Evitar que se envie el formulario por defecto//
@@ -9,7 +9,7 @@ const formAsociado = document.getElementById("Contenedor-Formulario");
         /*Lee los datos del formulario y los convierte en un objeto*/
         const asociado = Object.fromEntries(new FormData(formAsociado).entries());
 
-        if(asociado.contraseña !== asociado.ConfirmarContraseña){
+        if(asociado.contrasena !== asociado.ConfirmarContraseña){
             document.getElementById("MensajeRegistro").textContent = "Las contraseñas no coinciden";
             document.getElementById("MensajeRegistro").dataset.tipo="error";
             return;
@@ -29,7 +29,7 @@ const formAsociado = document.getElementById("Contenedor-Formulario");
 
 
             if(respuesta.ok && resultado.success){
-                fomularioAsociado.reset(); /*Limpia el formulario*/
+                formAsociado.reset(); /*Limpia el formulario*/
             }
         
         }catch(error){
